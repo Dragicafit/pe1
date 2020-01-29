@@ -65,7 +65,16 @@ public class FileReader {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-		return null;
-		
+		sc.next();
+		sc.next();
+		sc.next();
+		for(int i = 0; i < getNumberOfCities(); i++) {
+			String cityName = sc.next();
+			int typeA = Integer.parseInt(sc.next());
+			int typeB = Integer.parseInt(sc.next());
+			int typeC = Integer.parseInt(sc.next());
+			cities.add(new City(cityName, typeA, typeB, typeC));
+		}
+		return cities;
 	}
 }
