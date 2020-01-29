@@ -18,4 +18,8 @@ public class City {
 		this.typeC = typeC;
 		neighbours = new HashMap<City, Integer>();
 	}
+	
+	public String getName() {
+		return name;
+	}
 }
