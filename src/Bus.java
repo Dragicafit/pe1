@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
 public class Bus {
-	private Type type;
-	private ArrayList<City> cities;
+	public Type type;
+	public ArrayList<City> cities;
 	
 	public Bus(Type type) {
 		this.type = type;
