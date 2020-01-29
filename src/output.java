@@ -14,6 +14,8 @@ public class output {
 	public void write() throws IOException {
 		f = new FileOutputStream("test.txt");
 		for (Bus elt : liste) {
+			if (elt.getCities().isEmpty())
+				continue;
 			f.write(("###\n").getBytes());
 			f.write((elt.getType().toString() + "\n").getBytes());
 			for (City c : elt.getCities()) {
