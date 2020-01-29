@@ -14,8 +14,8 @@ public class Graph {
 	
 	public void parcours() {
 		City city = cities.get(0);
-		City old = null;
 		for (Bus bus : buses) {
+			City old = null;
 			while (old != city) {
 				city.visited = true;
 				bus.cities.add(city);
