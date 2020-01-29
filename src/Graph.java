@@ -3,5 +3,11 @@
 import java.util.ArrayList;
 
 public class Graph {
-	private ArrayList<Ville> liste = new ArrayList<>();
+	private ArrayList<City> cities;
+	
+	public Graph(ArrayList<City> cities) {
+		this.cities = cities;
+	}
+	
+	
 }
