@@ -8,6 +8,4 @@ public class Graph {
 	public Graph(ArrayList<City> cities) {
 		this.cities = cities;
 	}
-	
-	
 }
