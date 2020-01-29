@@ -17,4 +17,8 @@ public class City {
 		this.types.put(Type.C, typeC);
 		neighbours = new HashMap<City, Integer>();
 	}
+	
+	public String getName() {
+		return name;
+	}
 }
