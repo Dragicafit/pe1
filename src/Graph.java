@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class Graph {
-	private ArrayList<City> cities;
-	private ArrayList<Bus> buses;
+	public ArrayList<City> cities;
+	public ArrayList<Bus> buses;
 	
 	public Graph(ArrayList<City> cities, ArrayList<Bus> buses) {
 		this.cities = cities;

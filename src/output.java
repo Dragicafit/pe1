@@ -4,20 +4,20 @@ import java.util.ArrayList;
 
 public class output {
 
-	public static ArrayList<Bus> liste = new ArrayList<Bus>();
+	public ArrayList<Bus> liste;
 	static FileOutputStream f;
 
-	public output() {
-		liste = null;
+	public output(ArrayList<Bus> l) {
+		liste = l;
 	}
 
-	public static void write() throws IOException {
+	public void write() throws IOException {
 		f = new FileOutputStream("test.txt");
 		for (Bus elt : liste) {
 			f.write(("###\n").getBytes());
 			f.write((elt.getType().toString() + "\n").getBytes());
 			for (City c : elt.getCities()) {
-				f.write((c.getName()).getBytes());
+				f.write((c.name+"\n").getBytes());
 			}
 		}
 		f.flush();
