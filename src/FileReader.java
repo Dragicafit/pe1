@@ -1,8 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -77,7 +75,6 @@ public class FileReader {
 			int typeA = Integer.parseInt(sc.next());
 			int typeB = Integer.parseInt(sc.next());
 			int typeC = Integer.parseInt(sc.next());
-			System.out.println(cityName + " " + typeA + " " + typeB + " " + typeC);
 			cities.put(cityName, new City(cityName, typeA, typeB, typeC));
 		}
 		this.cities = cities;
@@ -106,7 +103,6 @@ public class FileReader {
 			City city2 = cities.get(cityName2);
 			city1.addEdge(city2, weight);
 			city2.addEdge(city1, weight);
-			System.out.println(cityName1 + " " + cityName2 + " " + weight);
 		}
 	}
 }
