@@ -1,4 +1,4 @@
-package tp3;
+package tp3.ex1;
 
 public class Data {
 	int nbCows;
