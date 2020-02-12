@@ -59,10 +59,11 @@ public class Somme {
 	public void afficher() {
 		for (int j = s; j >= 0; j--) {
 			for (int i = 0; i <= k; i++) {
-				if (z[j][i] > 0)
+				if (z[j][i] >= 0) {
 					System.out.print(z[j][i] + " ");
-				else
-					System.out.print("  ");
+				}else {
+					System.out.print("∞ ");
+				}
 			}
 			System.out.println();
 		}
