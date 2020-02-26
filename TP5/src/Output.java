@@ -20,6 +20,7 @@ public class Output {
 			id++;
 		}
 	}
+	
 
 	public int used_cache(ArrayList<Cache>cache) {
 		int count = 0;
