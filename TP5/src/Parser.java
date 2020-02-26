@@ -1,5 +1,3 @@
-package tp5;
-
 import java.io.File;
 import java.util.Scanner;
 
