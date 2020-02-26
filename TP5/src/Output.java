@@ -4,10 +4,9 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class Output {
-	static FileOutputStream f;
-	public void output(ArrayList<Cache> cache)throws IOException {
+	public static void output(ArrayList<Cache> cache, String file)throws IOException {
 		int id = 0;
-		f = new FileOutputStream("test.txt");
+		FileOutputStream f = new FileOutputStream(file);
 		f.write((used_cache(cache)+"\n").getBytes());
 		for (Cache c : cache) {
 			if(c.size > 0){
@@ -22,7 +21,7 @@ public class Output {
 	}
 	
 
-	public int used_cache(ArrayList<Cache>cache) {
+	public static int used_cache(ArrayList<Cache>cache) {
 		int count = 0;
 		for (Cache c : cache) {
 			if(c.size > 0) {
