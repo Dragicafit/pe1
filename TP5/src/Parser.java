@@ -3,15 +3,8 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Parser {
-	DataCenter data;
-	String filepath;
 	
-	public Parser(String filepath) {
-		data = new DataCenter();
-		this.filepath = filepath;
-	}
-	
-	public void parse() {
+	public static Network parse(String filepath) {
 		Scanner sc = null;
 		try {
 			sc = new Scanner(new File(filepath));
@@ -57,5 +50,6 @@ public class Parser {
 			EndPoint ep = network.endPoints.get(sc.nextInt());
 			ep.request.put(video, sc.nextInt());
 		}
+		return network;
 	}
 }
