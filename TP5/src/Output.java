@@ -10,7 +10,7 @@ public class Output {
 		f.write((used_cache(cache)+"\n").getBytes());
 		for (Cache c : cache) {
 			if(c.size > 0){
-				f.write(id);
+				f.write((id+"").getBytes());
 				for (Map.Entry<Integer, Integer> v : c.videos.entrySet()) {
 					f.write((" "+v.getKey()).getBytes());
 				}

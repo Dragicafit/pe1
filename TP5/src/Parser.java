@@ -19,7 +19,6 @@ public class Parser {
 		int cacheSize = sc.nextInt();
 		
 		Network network = new Network();
-		network.center = new DataCenter();
 		
 		// Videos
 		
