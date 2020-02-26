@@ -1,9 +1,11 @@
-import java.util.ArrayList;
 import java.util.Map;
 
 public class Main {
 	public static void main(String[] args) {
-		NetWork n = Parser.parser();
+		Network n = Parser.parse(args[0]);
+		remplissage(n);
+		Output.output(n.caches,"test.txt");
+		
 	}
 	
 	public static void remplissage(Network n) {
