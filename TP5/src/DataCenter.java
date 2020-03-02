@@ -1,12 +1,4 @@
-import java.util.HashMap;
-import java.util.Map;
 
-public class DataCenter {
-	public Map<Integer, Integer> videos;
-	public Map<EndPoint, Integer> endpoints;
-	
-	public DataCenter() {
-		videos = new HashMap<Integer, Integer>();
-		endpoints = new HashMap<EndPoint, Integer>();
-	}
+public class DataCenter extends Center {
+
 }

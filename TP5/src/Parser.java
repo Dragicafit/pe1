@@ -23,31 +23,37 @@ public class Parser {
 		// Videos
 		
 		for(int i = 0; i < nbC; i++) {
-			network.caches.add(new Cache());
-			network.caches.get(i).max_size = cacheSize;
+			network.caches[i] = new Cache();
+			network.caches[i].max_size = cacheSize;
 		}
 		
 		for(int i = 0; i < nbV; i++) {
-			network.center.videos.put(i, sc.nextInt());
+			network.center.videos[i] = new Video();
+			network.center.videos[i].numero = i;
+			network.center.videos[i].poids = sc.nextInt();
 		}
 		
 		for(int i = 0 ; i < nbEp; i++) {
 			int latency = sc.nextInt();
 			int epCache = sc.nextInt();
 			
-			network.endPoints.add(new EndPoint());
-			network.center.endpoints.put(network.endPoints.get(i), latency);
+			network.endPoints[i] = new EndPoint();
+			network.center.liaisons[i] = new Liaison();
+			network.center.liaisons[i].endpoint = network.endPoints[i];
+			network.center.liaisons[i].center = network.center;
+			network.center.liaisons[i].latence = latency;
 			
 			for(int j = 0; j < epCache; j++) {
-				Cache c = network.caches.get(sc.nextInt());
-				c.endpoint.put(network.endPoints.get(i), sc.nextInt());
+				int cache = sc.nextInt();
+				network.caches[cache].liaisons[j].endpoint = network.endPoints[i];
+				network.caches[cache].liaisons[j].latence = sc.nextInt();
+				network.caches[cache].liaisons[j].center = network.caches[cache];
 			}
 		}
 		
 		for(int i = 0; i < nbR; i++) {
 			int video = sc.nextInt();
-			EndPoint ep = network.endPoints.get(sc.nextInt());
-			ep.request.put(video, sc.nextInt());
+			network.endPoints[sc.nextInt()].requests[video].nbDemandes = sc.nextInt();
 		}
 		return network;
 	}

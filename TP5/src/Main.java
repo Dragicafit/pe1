@@ -10,12 +10,12 @@ public class Main {
 	
 	public static void remplissage(Network n) {
 		for (EndPoint e : n.endPoints) {
-			for (Map.Entry<Integer, Integer> entry : e.request.entrySet()) {
+			for (Request r : e.requests) {
 				for (Cache c : n.caches) {
-					Integer poids = n.center.videos.get(entry.getKey());
-					if (poids < c.max_size - c.size) {
-						c.videos.put(entry.getKey(), poids);
-						c.size += poids;
+					Video v = r.video;
+					if (v.poids < c.max_size - c.size) {
+						c.videos[] = v;
+						c.size += v.poids;
 						break;
 					}
 				}

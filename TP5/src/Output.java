@@ -1,27 +1,26 @@
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Map;
 
 public class Output {
-	public static void output(ArrayList<Cache> cache, String file)throws IOException {
+	public static void output(Cache[] cache, String file)throws IOException {
 		int id = 0;
 		FileOutputStream f = new FileOutputStream(file);
 		f.write((used_cache(cache)+"\n").getBytes());
 		for (Cache c : cache) {
 			if(c.size > 0){
 				f.write((id+"").getBytes());
-				for (Map.Entry<Integer, Integer> v : c.videos.entrySet()) {
-					f.write((" "+v.getKey()).getBytes());
+				for (Video v : c.videos) {
+					f.write((" "+v.numero).getBytes());
 				}
 				f.write(("\n").getBytes());
 			}
 			id++;
 		}
+		f.close();
 	}
 	
 
-	public static int used_cache(ArrayList<Cache>cache) {
+	public static int used_cache(Cache[] cache) {
 		int count = 0;
 		for (Cache c : cache) {
 			if(c.size > 0) {
