@@ -1,3 +1,9 @@
+import java.util.ArrayList;
+
 public class EndPoint {
-	public Request[] requests;
+	public ArrayList<Request> requests;
+	
+	public EndPoint() {
+		this.requests = new ArrayList<Request>();
+	}
 }

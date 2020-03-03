@@ -14,7 +14,7 @@ public class Main {
 				for (Cache c : n.caches) {
 					Video v = r.video;
 					if (v.poids < c.max_size - c.size) {
-						c.videos[] = v;
+						c.videos.add(v);
 						c.size += v.poids;
 						break;
 					}
