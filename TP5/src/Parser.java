@@ -77,6 +77,7 @@ public class Parser {
 			requests[endPoint].add(request);
 		}
 		for (int i = 0; i < nbEp; i++) {
+			network.endPoints[i].numero = i;
 			network.endPoints[i].requests = new Request[requests[i].size()];
 			network.endPoints[i].requests = requests[i].toArray(network.endPoints[i].requests);
 		}
