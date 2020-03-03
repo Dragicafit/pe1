@@ -19,16 +19,10 @@ public class Main {
 					}
 				}
 			}
-			remplissage(c,liste);
-		}
-	}
-	
-	public static void remplissage(Cache c,HashMap<Video,Integer>liste) {
-		int i =0;
-		for(Map.Entry<Video, Integer> elem : liste.entrySet()) {
-			if(elem.getKey().poids + c.size < c.max_size) {
-				//c.videos[i] = elem.getKey();
-				i++;
+			for(Map.Entry<Video, Integer> elem : liste.entrySet()) {
+				if(elem.getKey().poids + c.size < c.max_size) {
+					c.videos.add(elem.getKey());
+				}
 			}
 		}
 	}
