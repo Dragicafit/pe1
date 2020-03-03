@@ -1,5 +1,5 @@
-import java.util.ArrayList;
 
 public class EndPoint {
+	public int numero;
 	public Request[] requests;
 }
