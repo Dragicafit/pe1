@@ -2,9 +2,9 @@ import java.io.IOException;
 
 public class Main {
 	public static void main(String[] args) throws IOException {
-		Network n = Parser.parse("videos_worth_spreading.in");
-		testSortRequests(n);
-		Output.output(n.caches, "videos_worth_spreading.out");
+		Network n = Parser.parse("kittens.in.txt");
+		test(n);
+		Output.output(n.caches, "kittens.out");
 	}
 
 	public static void remplissage(Network n) {
@@ -12,7 +12,7 @@ public class Main {
 			for (Request r : e.requests) {
 				for (Cache c : n.caches) {
 					Video v = r.video;
-					if (v.poids < c.max_size - c.size && !c.videos.contains(v)) {
+					if (v.poids < c.max_size - c.size) {
 						c.videos.add(v);
 						c.size += v.poids;
 						break;
@@ -43,10 +43,26 @@ public class Main {
 			quickSort(e.requests, 0, e.requests.length - 1);
 		for (EndPoint e : n.endPoints) {
 			for (Request r : e.requests) {
-				for (Cache c : n.caches) {
-					int minLatence = 0;
-					for (int i = 1; i < c.liaisons.length; i++) {
-						if ()
+				Cache cache = null;
+				int liaison = 0;
+				for (int j = 1; j < n.caches.length; j++) {
+					for (int i = 1; i < n.caches[j].liaisons.length; i++) {
+						if (n.caches[j].liaisons[i].endpoint.numero == e.numero && n.caches[j].size < n.caches[j].max_size) {
+							if (cache == null) {
+								cache = n.caches[j];
+								liaison = i;
+							} else if (cache.liaisons[liaison].latence > n.caches[j].liaisons[i].latence) {
+								cache = n.caches[j];
+								liaison = i;
+							}
+						}
+					}
+				}
+				Video v = r.video;
+				if (cache != null) {
+					if (v.poids < cache.max_size - cache.size) {
+						cache.videos.add(v);
+						cache.size += v.poids;
 					}
 				}
 			}
