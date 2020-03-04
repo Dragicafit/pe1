@@ -2,9 +2,9 @@ import java.io.IOException;
 
 public class Main {
 	public static void main(String[] args) throws IOException {
-		Network n = Parser.parse("kittens.in.txt");
+		Network n = Parser.parse("videos_worth_spreading.in");
 		test(n);
-		Output.output(n.caches, "kittens.out");
+		Output.output(n.caches, "videos_worth_spreading.out");
 	}
 
 	public static void remplissage(Network n) {
