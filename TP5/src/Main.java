@@ -82,7 +82,7 @@ public class Main {
 	    int i = begin-1;
 	 
 	    for (int j = begin; j < end; j++) {
-	        if (requests[j].nbDemandes > pivot.nbDemandes) {
+	        if (requests[j].nbDemandes / requests[j].video.poids > pivot.nbDemandes / pivot.video.poids) {
 	            i++;
 	 
 	            Request tmp = requests[i];
