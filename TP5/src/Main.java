@@ -39,9 +39,8 @@ public class Main {
 	}
 	
 	public static void test(Network n) {
-		for (EndPoint e : n.endPoints)
-			quickSort(e.requests, 0, e.requests.length - 1);
 		for (EndPoint e : n.endPoints) {
+			quickSort(e.requests, 0, e.requests.length - 1);
 			for (Request r : e.requests) {
 				Cache cache = null;
 				int liaison = 0;
@@ -51,7 +50,7 @@ public class Main {
 							if (cache == null) {
 								cache = n.caches[j];
 								liaison = i;
-							} else if (cache.liaisons[liaison].latence > n.caches[j].liaisons[i].latence) {
+							} else if (cache.liaisons[liaison].latence > n.caches[j].liaisons[i].latence && n.center.liaisons[i].latence > n.caches[j].liaisons[i].latence) {
 								cache = n.caches[j];
 								liaison = i;
 							}
@@ -60,7 +59,7 @@ public class Main {
 				}
 				Video v = r.video;
 				if (cache != null) {
-					if (v.poids < cache.max_size - cache.size) {
+					if (v.poids < cache.max_size - cache.size && !cache.isInVideo(v)) {
 						cache.videos.add(v);
 						cache.size += v.poids;
 					}

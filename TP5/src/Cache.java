@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Cache extends DataCenter {
+public class Cache extends Center {
 	public ArrayList<Video> videos;
 	public Liaison[] liaisons;
 	public int max_size;
